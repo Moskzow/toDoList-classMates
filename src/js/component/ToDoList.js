@@ -1,23 +1,27 @@
 import React from "react";
 import { useState } from "react";
 const ToDoList = () => {
-	const [todos, setTodos] = useState([
-		{ title: "hola", id: 1 },
-		{ title: "adios", id: 2 }
-	]);
-
+	const [todos, setTodos] = useState([]);
 	const [task, setTask] = useState("");
+	const AddTask = () => {
+		const newTodos = todos.concat({ title: task, id: todos.length + 1 });
+		setTodos(newTodos);
+	};
 
 	return (
 		<div>
 			<input
 				type="text"
 				value={task}
-				onChange={e => setTask(e.target.value)}
+				onChange={e => {
+					setTask(e.target.value);
+				}}
 			/>
+			<button onClick={AddTask}>Add</button>
 
 			<ul>
 				{todos.map(todo => {
+					console.log(todo);
 					return <li key={todo.id}>{todo.title}</li>;
 				})}
 			</ul>
