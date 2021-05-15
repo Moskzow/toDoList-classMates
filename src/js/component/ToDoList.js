@@ -10,7 +10,12 @@ const ToDoList = () => {
 
 	return (
 		<div>
-			<input value={task}a" onChange={setTask(e => e.target.value)}></input>
+			<input
+				type="text"
+				value={task}
+				onChange={e => setTask(e.target.value)}
+			/>
+
 			<ul>
 				{todos.map(todo => {
 					return <li key={todo.id}>{todo.title}</li>;
