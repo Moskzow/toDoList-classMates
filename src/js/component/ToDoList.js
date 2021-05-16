@@ -14,9 +14,10 @@ const ToDoList = () => {
 		setTodos(newTodos);
 	};
 
-	const deleteTask = id => {
-		const newTask = todos.filter(todo => todo.id !== id);
-		setTodos(NewTask);
+	const deleteTask = todoId => {
+		console.log(todoId);
+		const newTodos2 = todos.filter(todo => todo.id !== todoId);
+		setTodos(newTodos2);
 	};
 
 	return (
@@ -33,7 +34,7 @@ const ToDoList = () => {
 					return (
 						<li key={todo.id}>
 							{todo.title}
-							<button onClick={deleteTask(todos.id)}>
+							<button onClick={() => deleteTask(todo.id)}>
 								Delete
 							</button>
 						</li>
@@ -43,10 +44,5 @@ const ToDoList = () => {
 		</div>
 	);
 };
-// {
-// 	array.map(item => {
-// 		return <div key={item.id}>I am one Object in the Array {item}</div>;
-// 	});
-// }
 
 export default ToDoList;
