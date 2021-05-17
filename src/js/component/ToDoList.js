@@ -5,7 +5,7 @@ import { useState } from "react";
 	crossorigin="anonymous"></script>;
 
 const ToDoList = () => {
-	const [todos, setTodos] = useState([{ title: "yo", id: 2 }]);
+	const [todos, setTodos] = useState([]);
 	const [task, setTask] = useState("");
 
 	const addTask = () => {
