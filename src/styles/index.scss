@@ -17,28 +17,23 @@ body {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    
 }
 input {
-    width: 480px;
+    width: 500px;
+    height: 40px;
     border: none;
     display: flex;
     border: 1px solid rgb(211, 211, 235);
     background-color: white;
-    
-    
 }
 input:focus {
     outline: none;
 }
-
 .contain-ul {
     display: flex;
     justify-content: space-around;
-    
-    
+    width: 500px;
 }
-
 .li-text {
    width: 450px;
 }
@@ -47,10 +42,15 @@ ul li {
     display: flex;
     border: 1px solid rgb(211, 211, 235);
     height: 40px;
-    margin-left: -168px;
-    width: 480px;
+    margin-left: 142px;
+    width: 500px;
     background-color: white;
-    
 }
 .button-delete {
+    visibility: hidden
 }
+ul li:hover {
+    .button-delete {
+    visibility: visible
+}
+

@@ -9,7 +9,7 @@ const ToDoList = () => {
 	const [task, setTask] = useState("");
 
 	const addTask = () => {
-		if (task != "") {
+		if (task != "" && event.key === "Enter") {
 			const newTodos = todos.concat({
 				title: task,
 				id: todos.length + 1
@@ -34,10 +34,8 @@ const ToDoList = () => {
 						value={task}
 						placeholder="Whats needs to be done"
 						onChange={e => setTask(e.target.value)}
+						onKeyDown={addTask}
 					/>
-					<button className="btn btn-primary" onClick={addTask}>
-						Add
-					</button>
 				</div>
 
 				<div className="contain-ul">
@@ -51,7 +49,7 @@ const ToDoList = () => {
 									<span
 										className="button-delete"
 										onClick={() => deleteTask(todo.id)}>
-										<i class="fas fa-times button-delete"></i>
+										<i className="fas fa-times button-delete"></i>
 									</span>
 								</li>
 							);
