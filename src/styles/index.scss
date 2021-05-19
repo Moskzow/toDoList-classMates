@@ -1,11 +1,11 @@
 @import "~bootstrap/scss/bootstrap.scss";
 
 body {
-    background: rgba(255, 255, 255, 0.418);
+    background: rgb(211, 211, 235);
 }
 .contain {
-    margin-left: 200px;
-    margin-right: 200px;
+    width: 50%;
+    margin: auto;
     margin-top: 50px;
 }
 .title {
@@ -15,28 +15,42 @@ body {
 }
 .contain-input {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    width: 100%;
+    
 }
 input {
-    width: 60%;
-    height: 50px;
+    width: 480px;
     border: none;
+    display: flex;
+    border: 1px solid rgb(211, 211, 235);
+    background-color: white;
+    
+    
 }
 input:focus {
     outline: none;
 }
-ul li {
-    width: 700px;
-    list-style:none;
-    height: 40px;
+
+.contain-ul {
     display: flex;
-    justify-content: space-between;
-    border: 1px solid grey;
-    border-radius: 5px;
+    justify-content: space-around;
+    
+    
+}
+
+.li-text {
+   width: 450px;
+}
+ul li {
+    list-style:none;
+    display: flex;
+    border: 1px solid rgb(211, 211, 235);
+    height: 40px;
+    margin-left: -168px;
+    width: 480px;
+    background-color: white;
+    
 }
 .button-delete {
-    margin-right: 5px; 
-}
-.li-text {
-   margin-left: 180px;
 }

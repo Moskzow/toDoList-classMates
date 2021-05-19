@@ -26,8 +26,8 @@ const ToDoList = () => {
 
 	return (
 		<div>
+			<h1 className="title">todos</h1>
 			<div className="contain">
-				<h1 className="title">todos</h1>
 				<div className="contain-input">
 					<input
 						type="text"
