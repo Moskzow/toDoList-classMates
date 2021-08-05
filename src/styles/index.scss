@@ -1,13 +1,56 @@
 @import "~bootstrap/scss/bootstrap.scss";
 
-/* 
+body {
+    background: rgb(211, 211, 235);
+}
+.contain {
+    width: 50%;
+    margin: auto;
+    margin-top: 50px;
+}
+.title {
+    font-size: 70px;
+    display: flex;
+    justify-content: center;
+}
+.contain-input {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+input {
+    width: 500px;
+    height: 40px;
+    border: none;
+    display: flex;
+    border: 1px solid rgb(211, 211, 235);
+    background-color: white;
+}
+input:focus {
+    outline: none;
+}
+.contain-ul {
+    display: flex;
+    justify-content: space-around;
+    width: 500px;
+}
+.li-text {
+   width: 450px;
+}
+ul li {
+    list-style:none;
+    display: flex;
+    border: 1px solid rgb(211, 211, 235);
+    height: 40px;
+    margin-left: 142px;
+    width: 500px;
+    background-color: white;
+}
+.button-delete {
+    visibility: hidden
+}
+ul li:hover {
+    .button-delete {
+    visibility: visible
+}}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
-
-*/

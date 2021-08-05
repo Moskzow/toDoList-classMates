@@ -1,49 +1,61 @@
 import React from "react";
 import { useState } from "react";
-const toDoList = () => {
+
+const ToDoList = () => {
 	const [todos, setTodos] = useState([]);
 	const [task, setTask] = useState("");
+
 	const addTask = () => {
-		const newTodos = todos.concat({ title: task, id: todos.length + 1 });
-		setTodos(newTodos);
+		if (task != "" && event.key === "Enter") {
+			const newTodos = todos.concat({
+				title: task,
+				id: todos.length + 1
+			});
+			setTodos(newTodos);
+		}
 	};
-	const deleteTask = i => {
-		let newTodos = [...todos];
-		newTodos.splice(i, 1);
-		setTodos(newTodos);
+
+	const deleteTask = todoId => {
+		console.log(todoId);
+		const newTodos2 = todos.filter(todo => todo.id !== todoId);
+		setTodos(newTodos2);
 	};
 
 	return (
 		<div>
-			<input
-				type="text"
-				value={task}
-				onChange={e => {
-					setTask(e.target.value);
-				}}
-			/>
-			<button onClick={addTask}>Add</button>
+			<h1 className="title">ToDo List</h1>
+			<div className="contain">
+				<div className="contain-input">
+					<input
+						type="text"
+						value={task}
+						placeholder="Whats needs to be done"
+						onChange={e => setTask(e.target.value)}
+						onKeyDown={addTask}
+					/>
+				</div>
 
-			<ul>
-				{todos.map(todo => {
-					// console.log(todo);
-					return (
-						<li key={todo.id}>
-							{todo.title}
-							<button onClick={() => deleteTask(todo.id)}>
-								X
-							</button>
-						</li>
-					);
-				})}
-			</ul>
+				<div className="contain-ul">
+					<ul>
+						{todos.map(todo => {
+							return (
+								<li key={todo.id}>
+									<span className="li-text">
+										{todo.title}
+									</span>
+									<span
+										className="button-delete"
+										onClick={() => deleteTask(todo.id)}>
+										<i className="fas fa-eraser"></i>
+									</span>
+								</li>
+							);
+						})}
+					</ul>
+				</div>
+			</div>
 		</div>
 	);
 };
-// {
-// 	array.map(item => {
-// 		return <div key={item.id}>I am one Object in the Array {item}</div>;
-// 	});
-// }
 
-export default toDoList;
+export default ToDoList;
