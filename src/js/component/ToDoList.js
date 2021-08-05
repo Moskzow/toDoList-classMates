@@ -8,8 +8,8 @@ const toDoList = () => {
 		setTodos(newTodos);
 	};
 	const deleteTask = i => {
-		let newTodos = [...todos]
-		newTodos.splice(i,1);
+		let newTodos = [...todos];
+		newTodos.splice(i, 1);
 		setTodos(newTodos);
 	};
 
